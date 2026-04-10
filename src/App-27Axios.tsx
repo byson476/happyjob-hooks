@@ -55,7 +55,8 @@ export default function App() {
 
 
   useEffect(() => {
-    inputRef.current?.focus();
+    if(inputRef.current)
+      inputRef.current?.focus();
   }, []);
 
   useEffect(() => {
