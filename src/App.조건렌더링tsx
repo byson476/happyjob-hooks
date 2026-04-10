@@ -1,0 +1,43 @@
+//리액트 컴포넌트 생성 및 중첩
+import {useState} from 'react';
+import './App.css';
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleLogin = () =>{
+    setIsLoggedIn(true);
+  }
+  const handleLogout = () =>{
+    setIsLoggedIn(false);
+  }
+  
+  //if문은 jsx에서 직접 사용할 수 없\기 때문에 즉시실행함수를 사용하여 조건부 렌더링을 구현할 수 있습니다.
+  let content;
+  if(isLoggedIn){
+    
+  }
+
+
+  return(
+<div>
+    /* 1  조건부 렌더링 삼항연산자*/
+    {isLoggedIn? (
+      <div>
+        <h1>Welcome Back!!!!</h1>
+        <button onClick={handleLogout}>Login</button>
+      </div>
+    ) : (
+      <div>
+        <h1>Please Login</h1>
+        <button onClick={handleLogin}>Logout</button>
+      </div>  
+    )}
+    /* 2  조건부 렌더링 &&연산자 */
+
+  </div>
+  );
+  
+}
+
+
+export default App;
